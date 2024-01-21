@@ -1,0 +1,22 @@
+<div *ngIf="userData" class=" container">
+    <div class="left-div">
+
+        <div class="right-div"> :تاريخ الميلاد
+            <div>{{ userData.dob }}</div>
+        </div>
+        <div class="right-div"> :الاسم
+            <div>{{ userData.name }}</div>
+        </div>
+        <div class="right-div">: رقم الهاتف
+            <div>{{ userData.phone }}</div>
+        </div>
+
+        <p class="title">: التعليقات</p>
+        <div *ngFor="let comment of userData.comments">
+            <p>: تعليق</p>
+            <p> {{ comment.commentDate | date:'short' }}</p>
+            <p> {{ comment.text }}</p>
+        </div>
+
+    </div>
+</div>
